@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['id', 'user', 'product', 'quantity', 'stock_status', 'ordered_at', 'get_order_status']
-    list_filter = ['orderes_at', 'user', 'product']
+    list_filter = ['ordered_at', 'user', 'product']
     search_fields = ['user__username', 'product__name', 'ordered_at']
     ordering = ['ordered_at']
 
