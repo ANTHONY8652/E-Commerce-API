@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'drf_yasg',
     'orders',
     'reviews',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [

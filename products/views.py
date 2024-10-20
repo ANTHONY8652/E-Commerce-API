@@ -10,7 +10,9 @@ class ProductListCreateView(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         category_name = self.request.data.get('category')
-        category, _ = Category.objects.get_or_create(name=category_name)
+        print(f'Category name from request: {category_name}')
+        category, created = Category.objects.get_or_create(name=category_name)
+        print(f'Category instance: {category}')
         serializer.save(category=category, owner=self.request.user)
 
 class ProductdetailView(generics.RetrieveUpdateDestroyAPIView):
